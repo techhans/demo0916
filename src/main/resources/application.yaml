@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    # ⚠️ 중요: 사용할 MariaDB의 포트(기본 3306)와 생성해 둔 데이터베이스(DB) 이름을 적어주세요.
+    url: jdbc:mariadb://localhost:3306/test_db
+    username: root
+    password: root6538
+    driver-class-name: org.mariadb.jdbc.Driver
+  
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      # 프로젝트 실행 시 엔티티(테이블) 구조를 자동으로 MariaDB에 생성/수정해 주는 옵션
+      ddl-auto: update 
+    show-sql: true # 실행되는 SQL 쿼리를 터미널에 출력해 주는 옵션
+    properties:
+      hibernate:
+        format_sql: true
